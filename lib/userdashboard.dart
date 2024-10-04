@@ -21,16 +21,41 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
 
   // Function to fetch listings from the Laravel API
   Future<void> fetchListings() async {
-    final response = await http.get(Uri.parse('http://10.0.2.2:8000/api/listingsdash'));
+    final url = Uri.parse('http://10.0.2.2:8000/api/listingsdash');
 
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
+    try {
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
+        setState(() {
+          // Filter listings and handle image retrieval
+          listings = jsonResponse['data'].map((listing) {
+            if (listing['images'] != null) {
+              try {
+                // Decode the JSON string from the images column
+                final imagePaths = json.decode(listing['images']);
+                // Construct the full image URL for each image path
+                listing['images'] = imagePaths.map((path) {
+                  return 'http://10.0.2.2:8000/images/$path'; // Adjust the URL as necessary
+                }).toList();
+              } catch (e) {
+                listing['images'] = [];
+              }
+            }
+            return listing;
+          }).toList();
+
+          isLoading = false; // Set loading state to false
+        });
+      } else {
+        throw Exception('Failed to load listings');
+      }
+    } catch (e) {
       setState(() {
-        listings = data['data'];
-        isLoading = false;
+        isLoading = false; // Set loading state to false
       });
-    } else {
-      throw Exception('Failed to load listings');
+      print('Error fetching listings: $e');
     }
   }
 

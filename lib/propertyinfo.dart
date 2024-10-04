@@ -162,19 +162,17 @@ class _PropertyInfoPageState extends State<PropertyInfoPage> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Fixed Image on the Left Side
         Container(
-          width: MediaQuery.of(context).size.width * 0.4, // Adjust width as needed
+          width: MediaQuery.of(context).size.width * 0.4,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildPropertyImage(), // Your method for displaying the property image
-              const SizedBox(height: 8), // Space between image and title
-              _buildTitle(), // Title below image (kept from the left side)
+              _buildPropertyImage(),
+              const SizedBox(height: 8),
+              _buildTitle(),
             ],
           ),
         ),
-        // Scrollable Details on the Right Side
         Expanded(
           child: SingleChildScrollView(
             child: Padding(
@@ -182,13 +180,12 @@ class _PropertyInfoPageState extends State<PropertyInfoPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Row for Title and Price
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(child: _buildTitle()), // Title below image (kept from the left side)
+                      Expanded(child: _buildTitle()),
                       Padding(
-                        padding: const EdgeInsets.only(left: 16.0), // Space between title and price
+                        padding: const EdgeInsets.only(left: 16.0),
                         child: Text(
                           '\$${widget.listing['price'] ?? 'N/A'}', // Display price on the right
                           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
