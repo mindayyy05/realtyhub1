@@ -1,0 +1,87 @@
+{
+  "properties": [
+    {
+      "property_type": "House",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "garages": 2,
+      "land_size": 5000,
+      "house_size": 3000,
+      "price": 450000,
+      "price_per_sqft": 150,
+      "address": "1234 Elm Street",
+      "street_address": "1234 Elm Street",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip_code": "90001",
+      "latitude": 34.052235,
+      "longitude": -118.243683,
+      "title": "Beautiful 4-Bedroom House in Los Angeles",
+      "description": "Spacious and modern 4-bedroom house with a large backyard, close to schools and parks.",
+      "real_estate_agent": "John Doe",
+      "is_negotiable": true,
+      "is_for_sale": true,
+      "is_for_rent": false,
+      "features": [
+        "Swimming Pool",
+        "Garden",
+        "Fireplace",
+        "Central Air"
+      ],
+      "image_1": "assets/images/img_1.png",
+      "image_2": "assets/images/img_1.png",
+      "image_3": "assets/images/img_1.png",
+      "image_4": "assets/images/img_1.png",
+      "image_5": "assets/images/img_1.png",
+      "images": [
+        "assets/images/img_1.png",
+        "assets/images/img_1.png",
+        "assets/images/img_1.png",
+        "assets/images/img_1.png",
+        "assets/images/img_1.png"
+      ],
+      "user_id": 1
+    },
+    {
+      "property_type": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "garages": 1,
+      "land_size": 0,
+      "house_size": 900,
+      "price": 220000,
+      "price_per_sqft": 245,
+      "address": "5678 Oak Avenue",
+      "street_address": "5678 Oak Avenue",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip_code": "94101",
+      "latitude": 37.774929,
+      "longitude": -122.419418,
+      "title": "Cozy 2-Bedroom Apartment in San Francisco",
+      "description": "Modern apartment located in the heart of San Francisco with amazing views and access to public transport.",
+      "real_estate_agent": "Jane Smith",
+      "is_negotiable": false,
+      "is_for_sale": true,
+      "is_for_rent": false,
+      "features": [
+        "Balcony",
+        "Fitness Center",
+        "Secure Parking"
+      ],
+      "image_1": "assets/images/img_2.png",
+      "image_2": "assets/images/img_2.png",
+      "image_3": "assets/images/img_2.png",
+      "image_4": "assets/images/img_2.png",
+      "image_5": "assets/images/img_2.png",
+      "images": [
+        "assets/images/img_2.png",
+        "assets/images/img_2.png",
+        "assets/images/img_2.png",
+        "assets/images/img_2.png",
+        "assets/images/img_2.png"
+      ],
+      "user_id": 2
+    }
+  ]
+}
